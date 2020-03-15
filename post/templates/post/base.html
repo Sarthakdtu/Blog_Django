@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> Trickers N Tricks  </title>
+      <meta charset="utf-8">
+      <link href="https://fonts.googleapis.com/css?family=Lemonada|Sahitya|Inknut+Antiqua&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </head>
+   <body style="background: url('{% static "images/bag3.jpg"%}')">
+   <div class="container">
+      <div class="container">
+         <div class="">
+            <h1 class="display-1 text-center" style="font-family: 'Lemonada';">
+               <a href="{% url 'post_list'  %}" style="text-decoration: none;">
+               Trickers N Tricks </a>
+            </h1>
+            <br>               
+            <p class="mb-1 text-center" style="width: 95%; font-size:30px;">
+               Your one stop destination for amazing tips and tricks.
+            </p>
+            <br>
+            <form name="search_bar" class="form-inline" action="{% url 'search' %}" method="get"
+               style=" display: block; margin-left: auto; margin-right: auto; width: 30%;" >
+               <input type="text" name="keywords" class="form-control input-group
+                  input-group-lg byte-text  text-area" placeholder="Search on this blog ">
+               <input class="btn btn-dark my-2 my-sm-0" type="submit" onclick="return IsEmpty();" value="Search"></input>
+            </form>
+            {% block search_script %}
+            {% include "post/search_script.html" %}
+            {% endblock %}
+         </div>
+         <div>
+            <br>
+            {% block categories %}
+            {% include "post/categories.html" %}
+            {% endblock %}
+         </div>
+      </div>
+      <div class="conatiner">
+         <div class="row">
+            <div class="col-lg-10">
+               {% block body_block %}
+               {% endblock %}
+            </div>
+            <div class="col-lg-2">
+               {% block space_for_ads %}
+               {% include "post/adsense.html" %}
+               {% endblock %}
+               <br><br>
+            </div>
+         </div>
+      </div>
+   </div>
+   <br><br>
+   {% block share_script %}
+   {% include "post/share_script.html" %}
+   {% endblock %}
+  
+
+   </body>
+</html>

@@ -1,0 +1,17 @@
+<div class="container text-justify row text-center">
+   
+   {% for category in categories %}
+   <div class="col-lg-2">
+   {% if category_name and category.category_name == category_name %}
+   <a href="#" style="text-decoration: none;" >
+   <button type="button" class="btn btn-lg {{ category.colour }}">{{ category.category_name }}</button>
+   </a>
+   {% else %}
+   <a href="{% url 'post_list_category' category_name=category.category_name %}"
+      style="text-decoration: none;" >
+   <button type="button" class="btn btn-lg {{ category.colour_outline }}" style="font-size:150%;">{{ category.category_name }}</button>
+   </a>
+   {% endif %}  
+   </div>        
+   {% endfor %}
+</div>

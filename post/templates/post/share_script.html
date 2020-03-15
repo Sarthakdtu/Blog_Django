@@ -1,0 +1,11 @@
+
+<script>
+function myFunction(post_id) {
+  
+    var url_path = window.location.origin + "/post/" + post_id
+    var message = "Hey checkout this cool post that I just read on trickers n tricks. Go to this link to check that out "+url_path
+    var dummy = $('<input>').val(message).appendTo('body').select()
+    document.execCommand('copy')
+    alert("Link Copied To Clipboard")
+}
+</script>

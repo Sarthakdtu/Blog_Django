@@ -1,0 +1,12 @@
+{% extends "post/base.html" %}
+{% load static %}
+{% block body_block %}
+       <br>
+       <br>
+       <div class="container text-center">
+       <h3 class="text-center"> Ohh No!! No such post exists.  </h3>
+       <br>
+       <br>
+       <a href="{% url 'post_list'  %}" class="btn btn-primary text-center"> Home</a>
+       </div>
+{% endblock %}

@@ -1,0 +1,7 @@
+Title : 
+            <input type="text" name="title" placeholder="Title Goes Here">
+
+            <br>
+            Text:
+            <input id="text" type="hidden" name="text">
+            <trix-editor input="text"></trix-editor>

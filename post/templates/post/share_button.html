@@ -1,0 +1,13 @@
+<div class="dropdown">
+  <p class="btn btn-success dropdown-toggle" role="button" id="dropdownMenuLink" 
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Share
+  </p>
+  
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a style="color:green;" class="dropdown-item btn btn-success " href="https://wa.me/?text=Hey%20checkout%20this%20cool%20post%20that%20I%20just%20read%20on%20trickers%20n%20tricks.%20Go%20to%20this%20link%20and%20check%20that%20out%20{{request.get_host}}/post/{{post.pk}}" target="__blank">Whatsapp</a>
+    <a style="color:blue;" class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{request.get_host}}/post/{{post.pk}}" target="__blank">Facebook</a>
+    <button class="dropdown-item"  data-toggle="popover" data-content="Something happened" onclick="myFunction({{post.pk}})" >Get Link</button>
+    <a style="color:skyblue;" class="dropdown-item" target="__blank" href="https://twitter.com/share?original_referer={{request.get_host}}/post/{{post.pk}}&text=Hey%20checkout%20this%20cool%20post%20that%20I%20just%20read%20on%20trickers%20n%20tricks.%20Go%20to%20this%20link%20and%20check%20that%20out&url=">Twitter</a>
+  </div>
+</div>

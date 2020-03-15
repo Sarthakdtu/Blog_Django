@@ -1,0 +1,24 @@
+{% extends "post/base.html" %}
+
+{% load static %}
+{% block body_block %}
+<div class="container">
+   <br>
+   {% block post_card %}
+   {% include "post/post_list_logic.html" %}
+   {% endblock %}
+</div>
+<br>
+    {% if search_results %}
+        {% block search_results_pagination %}
+        {% include "post/pagination_search.html" %}
+        {% endblock %}
+       
+    {% else %}
+        {% block main_pagination %}
+        {% include "post/pagination_main.html" %}
+        {% endblock %}
+        
+    {% endif %}
+{% endblock %}
+
