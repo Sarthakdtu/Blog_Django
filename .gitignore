@@ -6,6 +6,6 @@ myvenv
 db.sqlite3
 .DS_Store
 *.jpeg
-*.jpg
-*.jfif
+static/
 /static_cdn/*
+media/

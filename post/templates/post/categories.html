@@ -1,17 +1,34 @@
-<div class="container text-justify row text-center">
-   
-   {% for category in categories %}
-   <div class="col-lg-2">
-   {% if category_name and category.category_name == category_name %}
-   <a href="#" style="text-decoration: none;" >
-   <button type="button" class="btn btn-lg {{ category.colour }}">{{ category.category_name }}</button>
-   </a>
-   {% else %}
-   <a href="{% url 'post_list_category' category_name=category.category_name %}"
-      style="text-decoration: none;" >
-   <button type="button" class="btn btn-lg {{ category.colour_outline }}" style="font-size:150%;">{{ category.category_name }}</button>
-   </a>
-   {% endif %}  
-   </div>        
-   {% endfor %}
+<div class="container text-center">
+   <nav class="navbar navbar-expand-lg navbar-light" >
+  <a class="navbar-brand" style="font-size:150%;" href="#">Explore</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+       {% for category in categories %}
+         <div class="">
+         {% if category_name and category.category_name == category_name %}
+         <li class="nav-item">
+         <a href="#" style="text-decoration: none;" >
+         <button type="button" style="font-size:150%;" class="btn btn-lg {{ category.colour }}">{{ category.category_name }}</button>
+         </a></li>
+         {% else %}
+         <li class="nav-item">
+         <a href="{% url 'post_list_category' category_name=category.category_name %}"
+            style="text-decoration: none;" >
+         <button type="button" class="btn btn-lg {{ category.colour_outline }}" style="font-size:150%;">{{ category.category_name }}</button>
+         </a></li>
+         {% endif %}  
+         </div>      
+         <span>&nbsp&nbsp&nbsp</span>  
+       {% endfor %}
+     
+    </ul>
+  
+
+  </div>
+</nav>
+
 </div>
